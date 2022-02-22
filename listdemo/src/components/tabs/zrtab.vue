@@ -1,8 +1,8 @@
 <template>
   <div>
-    <van-tabbar v-model="currentSelected" :inactive-color="placeholderColor" :active-color="selectColor" route placeholder safe-area-inset-bottom>
+    <van-tabbar v-model="currentSelected" :inactive-color="placeholderColor" :active-color="selectColor"   placeholder safe-area-inset-bottom>
       <template v-for="(item, idx) in tabArrays" :key="idx">
-        <van-tabbar-item replace :to="item.route" :dot="item.dot" :badge-props="getBadge(item.badge)">
+        <van-tabbar-item :to="item.route" :dot="item.dot" :badge-props="getBadge(item.badge)">
           <span>{{item.title}}</span>
           <template #icon="props">
             <van-image :src="props.active ? item.selected : item.select"/>
@@ -43,7 +43,7 @@ export default {
     },
     selectedIndex: {
       type: Number,
-      default: 0
+      default: 1
     },
     placeholderColor: {
       type: String,
@@ -66,36 +66,12 @@ export default {
         "show-zero": false,
         "content": parseInt(number)
       }
-    },
+    }
   },
 
-  setup(props, context) {
-
-    // if(this.$router.path === '/') {
-    //   this.$router.push('/one')
-    // }
-
-    onBeforeMount(() => {
-      console.log('9999999999')
-    }),
-    onMounted(() => {
-      console.log('1231231231231231')
-      // this.currentSelected = 2
-      // console.log(this.testname)
-      // console.log(this.currentSelected)
-      // setTimeout(() => {
-      //   console.log(this.testname)
-      // }, 2000);
-    }),
-    onUpdated(() => {
-      console.log('8888888888888')
-      // console.log(this.testname)
-    })
-
-    const active = ref('one')
-    return { active }
-  },
-
+  setup() {
+    console.log("zrtab 页面开始加载")
+  }
 }
 </script>
 

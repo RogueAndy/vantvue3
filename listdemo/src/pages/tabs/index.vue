@@ -3,24 +3,23 @@
     <router-view>
     </router-view>
     <div>
-      <zr-tabbar :tabArrays="tabs" :selectIndex="selectIndex"/>
+      <zrtab :tabArrays="tabs" :selectIndex="selectIndex"></zrtab>
     </div>
     
   </div>
 </template>
 
 <script>
-// import zrTabbar from '../../tabs/zrTabbar.vue'
-import zrTabbar from '@/components/tabs/zrTabbar.vue'
+import zrtab from '@/components/tabs/zrtab'
 import { onMounted } from 'vue'
 
 export default {
   components: {
-    zrTabbar
+    zrtab
   },
   data() {
     return {
-      selectIndex: 3,
+      selectIndex: 2,
       tabs: [
         {"select": require('@/components/tabs/icons/icon-default-no-0.png'), "selected": require('@/components/tabs/icons/icon-default-yes-0.png'), "title": "首页", "badge": 0, "dot": true, "route": "/one"},
         {"select": require('@/components/tabs/icons/icon-default-no-1.png'), "selected": require('@/components/tabs/icons/icon-default-yes-1.png'), "title": "新闻", "badge": 2, "route": "/two"},
@@ -39,9 +38,7 @@ export default {
       console.log('~~~~~~~~~~')
       // console.log(this.testIndex)
     })
-    console.log('tabs的setup方法22')
-
-  },
+  }
 }
 
 

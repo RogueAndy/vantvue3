@@ -9,12 +9,34 @@ const four = () => import('@/pages/four')
 const routes = [
   // {
   //   path: '/', 
-  //   redirect: '/one'
+  //   redirect: '/tabs'
   // },
   // {
   //   path: '/tabs',
   //   name: 'tabs',
   //   component: tabs
+    // children: [
+    //   {
+    //     path: 'one',
+    //     name: 'one',
+    //     component: one
+    //   },
+    //   {
+    //     path: '',
+    //     name: 'two',
+    //     component: two
+    //   },
+    //   {
+    //     path: 'three',
+    //     name: 'three',
+    //     component: three
+    //   },
+    //   {
+    //     path: 'four',
+    //     name: 'four',
+    //     component: four
+    //   }
+    // ]
   // },
   {
     path: '/one',
