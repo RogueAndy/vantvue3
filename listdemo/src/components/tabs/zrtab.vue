@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-tabbar v-model="currentSelected" :inactive-color="placeholderColor" :active-color="selectColor"   placeholder safe-area-inset-bottom>
+    <van-tabbar v-model="currentSelected" :inactive-color="placeholderColor" :active-color="selectColor" placeholder safe-area-inset-bottom>
       <template v-for="(item, idx) in tabArrays" :key="idx">
         <van-tabbar-item :to="item.route" :dot="item.dot" :badge-props="getBadge(item.badge)">
           <span>{{item.title}}</span>
@@ -15,7 +15,8 @@
 
 <script>
 import {Tabbar, TabbarItem, Image} from 'vant'
-import { onBeforeMount, onMounted, onUpdated, ref } from 'vue'
+import { onBeforeMount, onMounted, onUpdated, ref, getCurrentInstance } from 'vue'
+import { useRouter } from 'vue-router'
 
 export default {
   name: "zr-tabbar",
@@ -69,8 +70,20 @@ export default {
     }
   },
 
-  setup() {
+  setup(props) {
     console.log("zrtab 页面开始加载")
+
+    onMounted(() => {
+      const router = useRouter()
+      if(router.currentRoute.value.path == '/') {
+        let defaultValue = props.tabArrays[props.selectedIndex].route
+        router.push({ path: defaultValue })
+      }
+      console.log(router.currentRoute.value.path)
+    })
+
+    return {
+    }
   }
 }
 </script>

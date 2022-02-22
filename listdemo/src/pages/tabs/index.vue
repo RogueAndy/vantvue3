@@ -3,7 +3,7 @@
     <router-view>
     </router-view>
     <div>
-      <zrtab :tabArrays="tabs" :selectIndex="selectIndex"></zrtab>
+      <zrtab :tabArrays="tabs" :selectedIndex="selectIndex"></zrtab>
     </div>
     
   </div>
@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      selectIndex: 2,
+      selectIndex: 0,
       tabs: [
         {"select": require('@/components/tabs/icons/icon-default-no-0.png'), "selected": require('@/components/tabs/icons/icon-default-yes-0.png'), "title": "首页", "badge": 0, "dot": true, "route": "/one"},
         {"select": require('@/components/tabs/icons/icon-default-no-1.png'), "selected": require('@/components/tabs/icons/icon-default-yes-1.png'), "title": "新闻", "badge": 2, "route": "/two"},

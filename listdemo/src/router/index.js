@@ -9,7 +9,7 @@ const four = () => import('@/pages/four')
 const routes = [
   // {
   //   path: '/', 
-  //   redirect: '/tabs'
+  //   redirect: '/one'
   // },
   // {
   //   path: '/tabs',
