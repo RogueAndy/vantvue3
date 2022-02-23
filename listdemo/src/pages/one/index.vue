@@ -1,13 +1,13 @@
 <template>
-  <div>11111</div>
+  <van-list v-model:loading="loading"></van-list>
 </template>
 
 <script>
 
-
-export default ({
-  setup() {
-    console.log('this is one page')
+import { List } from 'vant'
+export default {
+  components: {
+    [List.name]: List
   },
-})
+}
 </script>

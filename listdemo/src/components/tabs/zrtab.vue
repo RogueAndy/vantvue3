@@ -76,10 +76,11 @@ export default {
     onMounted(() => {
       const router = useRouter()
       if(router.currentRoute.value.path == '/') {
+        // 由于初始化进入不会显示页面，拦截路由主动跳转到默认页
         let defaultValue = props.tabArrays[props.selectedIndex].route
         router.push({ path: defaultValue })
       }
-      console.log(router.currentRoute.value.path)
+      console.log(router.currentRoute)
     })
 
     return {
